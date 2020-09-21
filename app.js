@@ -10,6 +10,13 @@ class Product {
 
 class ShoppingCart {
     items = [];
+    get totalAmount() {
+        const sum = this.items.reduce(
+            (prevValue, curItem) => prevValue + curItem.price,
+            0
+        );
+        return sum;
+    }
 
     addProduct(product) {
         this.items.push(product);
