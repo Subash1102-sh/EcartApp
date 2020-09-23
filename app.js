@@ -121,25 +121,23 @@ class Component {
 
 
                 this.#products = [
-                    new products =
-                    new Product(
-                        'A Pillow',
-                        'https://www.maxpixel.net/static/photo/2x/Soft-Pillow-Green-Decoration-Deco-Snuggle-1241878.jpg',
-                        'A soft pillow!',
-                        19.99
+                        new products = {
+                            [
+                                new Product(
+                                    'A Pillow',
+                                    'https://www.maxpixel.net/static/photo/2x/Soft-Pillow-Green-Decoration-Deco-Snuggle-1241878.jpg',
+                                    'A soft pillow!',
+                                    19.99,
 
-                        new Product(
-                            'A Carpet',
-                            'https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Ardabil_Carpet.jpg/397px-Ardabil_Carpet.jpg',
-                            'A carpet which you might like - or not.',
-                            89.99
-                        ),
+                                    new Product(
+                                        'A Carpet',
+                                        'https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Ardabil_Carpet.jpg/397px-Ardabil_Carpet.jpg',
+                                        'A carpet which you might like - or not.',
+                                        89.99
+                                    ),
 
-
-                    ]
-
-                }
-
+                                ]
+                            }
 
 
 
@@ -150,41 +148,46 @@ class Component {
 
 
 
-                render();
-                const prodList = this.createElement('ul', 'product-list', [new ElementAttribute('id', 'product-list')]);
-
-                for (const prod of this.products) {
-                    new ProductItem(prod, 'product-list');
-
-
-                }
 
 
 
 
-                class Shop extends {
-                    constructor() {
-                            this.render();
-                        },
 
-                        render() {
-                            this.cart = new ShoppingCart('app');
-                            new ProductList('app');
-                        }
-                },
+                            render(),
+                            prodList = this.createElement('ul', 'product-list', [new ElementAttribute('id', 'product-list')]);
 
-                class App {
-                    static cart;
-
-                    static init() {
-                        const shop = new Shop();
-                        this.cart = shop.cart;
-                    }
-
-                    static addProductToCart(product) {
-                        this.cart.addProduct(product);
-                    };
-                },
+                            for (prod of products) {
+                                new ProductItem(prod, 'product-list');
 
 
-                App.init()
+                            }
+
+
+
+
+                            class Shop extends {
+                                constructor() {
+                                        this.render();
+                                    },
+
+                                    render() {
+                                        this.cart = new ShoppingCart('app');
+                                        new ProductList('app');
+                                    }
+                            },
+
+
+                            class App {
+                                static cart;
+
+                                static init() {
+                                    const shop = new Shop();
+                                    this.cart = shop.cart;
+                                }
+
+                                static addProductToCart(product) {
+                                    this.cart.addProduct(product);
+                                };
+
+
+                                App.init()
